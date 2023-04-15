@@ -25,11 +25,25 @@ function newYellowBox(x, y) {
         });
     }
 
+// add a button to the stage that adds a yellow box
+var button = new Konva.Text({
+    x: 50,
+    y: 50,
+    width: 120,
+    height: 50,
+    fontSize: 12,
+    fontFamily: 'Calibri',
+    fill: 'black',
+    text: 'Add a yellow box',
+});
 
+button.on ('click', function () {
+    layer.add(newYellowBox(rectX, rectY));
+});
 
     
-var box = newYellowBox(rectX, rectY);        
-var box2 = newYellowBox(rectX+50,rectY+100);
+//var box = newYellowBox(rectX, rectY);        
+//var box2 = newYellowBox(rectX+50,rectY+100);
 
 var simpleText = new Konva.Text({
         x: stage.width() / 2,
@@ -45,16 +59,20 @@ var simpleText = new Konva.Text({
 function styleBox(box) {
     box.on('mouseover', function () {
         document.body.style.cursor = 'pointer';
+        console.log("mouse over");
     });
     box.on('mouseout', function () {
         document.body.style.cursor = 'default';
+        console.log("mouse out");
     });
 };
 
-styleBox(box);
-styleBox(box2);
+//styleBox(box);
+//styleBox(box2);
+styleBox(button)
 
-layer.add(box);
-layer.add(box2);
-layer.add(simpleText);
+//layer.add(box);
+//layer.add(box2);
+layer.add(button);
+//layer.add(simpleText);
 stage.add(layer);
