@@ -3,7 +3,7 @@
 
 <head>
     <script src="konva.js"></script>
-
+    <link rel="stylesheet" href="styles.css">
     <meta charset="utf-8" />
     <title>Konva Drag and Drop Demo</title>
     <style>
@@ -11,13 +11,19 @@
             margin: 0;
             padding: 0;
             overflow: hidden;
-            background-color: #f0f0f0;
         }
     </style>
 </head>
 
 <body>
-    <div id="container"></div>
+    <div id="container" style="position: relative;">
+        <div id="button-container" style="position: absolute; z-index: 1;">
+          <button id="add-sticky-note" style="position: absolute; top: 50px; left: 50px;">
+            Add a Sticky Note
+          </button>
+        </div>
+      </div>
+    
     <script src="stuff.js"></script>
 
 
